@@ -32,13 +32,13 @@ model Session {
 }
 
 model QRCode {
-  id              Int      @id @default(autoincrement())
-  title           String
-  shop            String
-  productId       String
-  productHanle    String
-  productVarianId String
-  destination     String
-  scans           Int      @default(0)
-  createdAt       DateTime @default(now())
+  id               Int      @id @default(autoincrement())
+  title            String
+  shop             String
+  productId        String
+  productHanle     String
+  productVariantId String
+  destination      String
+  scans            Int      @default(0)
+  createdAt        DateTime @default(now())
 }
