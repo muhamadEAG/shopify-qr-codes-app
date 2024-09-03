@@ -36,7 +36,7 @@ model QRCode {
   title            String
   shop             String
   productId        String
-  productHanle     String
+  productHandle    String
   productVariantId String
   destination      String
   scans            Int      @default(0)
