@@ -1,6 +1,26 @@
-# This file stores configurations for your Shopify app.
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
+client_id = "3535342edf34cfb961db86970cf0f5f9"
+name = "Testing App"
+handle = "testing-app-782"
+application_url = "https://placed-subsection-towards-seo.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "jelin-dev.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://placed-subsection-towards-seo.trycloudflare.com/auth/callback",
+  "https://placed-subsection-towards-seo.trycloudflare.com/auth/shopify/callback",
+  "https://placed-subsection-towards-seo.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-07"
@@ -8,3 +28,6 @@ api_version = "2024-07"
   [[webhooks.subscriptions]]
   topics = [ "app/uninstalled" ]
   uri = "/webhooks"
+
+[pos]
+embedded = false
