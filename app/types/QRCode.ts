@@ -7,4 +7,5 @@ export type GeneratedQRCode = Omit<QRCode, "createdAt"> & {
   productImage: string;
   destinationUrl: string;
   image: string;
+  productDeleted: boolean;
 };
