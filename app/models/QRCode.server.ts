@@ -4,7 +4,7 @@ import qrcode from "qrcode";
 import invariant from "tiny-invariant";
 import type { AdminGraphqlClient } from "@shopify/shopify-app-remix/server";
 
-async function getQRCodeImage(id: number) {
+export async function getQRCodeImage(id: number) {
   const url = new URL(`/qrcodes/${id}/scan`, process.env.SHOPIFY_APP_URL);
   return qrcode.toDataURL(url.href);
 }
