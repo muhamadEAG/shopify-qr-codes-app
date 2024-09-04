@@ -4,12 +4,12 @@ import qrcode from "qrcode";
 import invariant from "tiny-invariant";
 import type { AdminGraphqlClient } from "@shopify/shopify-app-remix/server";
 
-export async function getQRCodeImage(id: number) {
+export function getQRCodeImage(id: number) {
   const url = new URL(`/qrcodes/${id}/scan`, process.env.SHOPIFY_APP_URL);
   return qrcode.toDataURL(url.href);
 }
 
-async function getDestinationUrl(qrCode: QRCode) {
+export function getDestinationUrl(qrCode: QRCode) {
   if (qrCode.destination === "product") {
     return `https://${qrCode.shop}/products/${qrCode.productHandle}`;
   }
