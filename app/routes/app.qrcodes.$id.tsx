@@ -35,8 +35,13 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
   const { admin } = await authenticate.admin(request);
 
   if (params.id === "new") {
-    return json(await getQRCode(Number(params.id), admin.graphql));
+    return json({
+      destination: "product",
+      title: "",
+    });
   }
+
+  return json(await getQRCode(Number(params.id), admin.graphql));
 }
 
 export async function action({ request, params }: ActionFunctionArgs) {
